@@ -1,0 +1,4 @@
+/assets/binaries/*.*
+/assets/licensing/*.*
+/assets/licensing/thirdPartyLicenses/*.*
+/node_modules/
