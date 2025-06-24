@@ -11,15 +11,11 @@
     <h1>AMEX DMS App</h1>
     <p class="subtitle">Internal Tool Access</p>
 
-    <form id="auth-form">
-      <input type="password" id="password" placeholder="Enter password" required />
-      <button type="submit">Unlock</button>
-      <p id="error-msg" style="color: red; margin-top: 20px; display: none;">Incorrect password</p>
-    </form>
-
-    <div id="download-section" style="display: none;">
-      <a href="https://your-link-1.com/App_v1.0.exe" class="download-btn" download>Download App v1.0</a>
-      <a href="https://your-link-2.com/LICENSE.txt" class="download-btn" download>Download License</a>
+    <div id="download-section">
+      <input type="password" id="password" placeholder="Enter password to download" required />
+      <button onclick="requestDownload('')" class="download-btn" type="button">Download App v1.0</button>
+      <button onclick="requestDownload('')" class="download-btn" type="button">Download License</button>
+      <p id="error" style="color: red;"></p>
     </div>
   </div>
 

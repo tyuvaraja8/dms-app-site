@@ -2,3 +2,4 @@
 /assets/licensing/*.*
 /assets/licensing/thirdPartyLicenses/*.*
 /node_modules/
+/.wrangler/
