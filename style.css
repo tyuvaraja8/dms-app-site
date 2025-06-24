@@ -75,3 +75,7 @@ background: black;
 color: white;
 box-shadow: none;
 }
+
+#error{
+    display: none;
+}
