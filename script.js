@@ -1,15 +1,19 @@
-const correctPassword = "mysecurepass"; // Replace with your password or hash logic
+async function requestDownload(filename){
+    const password = document.getElementById("password").value;
+    const res = await fetch("https://dms-site-app-worker.tyuvaraja8.workers.dev/", {
+        method: 'POST',
+        headers:{ 'Content-Type': 'application/json'},
+        body: JSON.stringify({password, file:filename})
+    });
 
-document.getElementById("auth-form").addEventListener("submit", function (e) {
-e.preventDefault();
-const entered = document.getElementById("password").value;
-const errorMsg = document.getElementById("error-msg");
+    if (res.status !== 200){
+        document.getElementById('error').textContent = 'Incorrect password.';
+    }
 
-if (entered === correctPassword) {
-document.getElementById("auth-form").style.display = "none";
-document.getElementById("download-section").style.display = "block";
-errorMsg.style.display = "none";
-} else {
-errorMsg.style.display = "block";
+    if (res.status == 200){
+        document.getElementById('error').textContent = '';
+    }
+
+    const data = await res.json();
+    window.location.href = data.url;
 }
-});
